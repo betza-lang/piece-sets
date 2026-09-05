@@ -1,0 +1,20 @@
+# King
+export K = F W;
+
+# Knight
+export N;
+
+# Rook
+export R = W0;
+
+# Bishop
+export B = F0;
+
+# Queen
+export Q = R B;
+
+# Pawn
+export P =
+        fW      # normal
+        fcF     # capture
+        fiD;    # initial 2-length move
