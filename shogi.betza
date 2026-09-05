@@ -1,0 +1,43 @@
+using chess;
+
+# King
+export K;
+
+# Rook
+export R;
+
+# Promoted rook
+export :pR: = FR;
+
+# Bishop
+export B;
+
+# Promoted bishop
+export :pB: = WB;
+
+# Gold general
+export G = W fF;
+
+# Silver general
+export S = F fW;
+
+# Promoted silver
+export :pS: = G;
+
+# Knight
+override export N = <ff>N;
+
+# Promoted knight
+export :pN: = G;
+
+# Lance
+export L = fR;
+
+# Promoted lance
+export :pL: = G;
+
+# Pawn
+override export P = fW;
+
+# Promoted pawn
+export :pP: = G;
