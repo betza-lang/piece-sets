@@ -1,0 +1,622 @@
+using chess;
+
+# https://en.wikipedia.org/wiki/Taikyoku_shogi
+# https://dn710201.ca.archive.org/0/items/taikyoku-shogi-sekai-no-shogi/sekai%20no%20shogi.pdf
+# https://web.archive.org/web/20221207220452/https://katakas.org/documents/TSV.pdf
+
+###############################################################################
+# REGULAR
+###############################################################################
+
+export :pawn: = fW;
+
+export :earth general: = vW;
+export :go between: = :earth general:;
+
+export :stone general: = fF;
+
+export :iron general: = fW fF;
+export :dog: = :iron general:;
+
+export :swooping owl: = fW bF;
+export :old rat: = :swooping owl:;
+export :strutting crow: = :swooping owl:;
+
+export :tile general: = bW fF;
+export :sword soldier: = :tile general:;
+
+export :copper general: = vW fF;
+export :flying goose: = :copper general:;
+export :climbing monkey: = :copper general:;
+
+export :reclining dragon: = W;
+
+export :coiled serpent: = vW bF;
+
+export :flying chicken: = sW fF;
+
+export :cat sword: = F;
+
+export :evil wolf: = fF fsW;
+
+export :silver general: = F fW;
+export :fierce stag: = :silver general:;
+
+export :blind dog: = fF bsW;
+export :huai chicken: = :blind dog:;
+
+export :old monkey: = F bW;
+
+export :gold general: = W fF;
+export :fierce wolf: = :gold general:;
+
+export :fierce leopard: = vK;
+
+export :blind monkey: = sK;
+export :blind bear: = :blind monkey:;
+export :angry boar: = :blind monkey:;
+
+export :drunken elephant: = fsK;
+export :neighboring king: = :drunken elephant:;
+export :rushing boar: = :drunken elephant:;
+
+export :deva: = W <fl>F bF;
+
+export :dark spirit: = W <fr>F bF;
+
+export :blind tiger: = F bsW;
+
+# en.wikipedia declares
+# export :left general: = rF rvW;
+# export :right general: = lF lvW;
+# but Sekai no Shogi declares
+export :left general: = K;
+export :right general: = :left general:;
+
+export :crown prince: = K;
+export :bears eyes: = :crown prince:;
+export :poisonous wolf: = :crown prince:;
+
+export :wood general: = fF2;
+
+export :donkey: = W2;
+export :enchanted badger: = :donkey:;
+
+export :flying horse: = F2;
+
+export :beast cadet: = F2 fsW2;
+
+export :king: = F2 W2;
+export :fragrant elephant: = :king:;
+export :white elephant: = :king:;
+
+export :rushing bird: = F sW fW2;
+
+export :fierce bear: = fF2 fsW;
+
+export :eastern barbarian: = fF sW vW2;
+export :western barbarian: = :eastern barbarian:;
+
+export :northern barbarian: = fF vW sW2;
+export :southern barbarian: = :northern barbarian:;
+export :prancing stag: = :northern barbarian:;
+
+export :poisonous serpent: = fF fsW2 bW;
+
+export :old kite: = F2 sW;
+
+export :fierce eagle: = F2 fsW;
+
+export :guardian of the gods: = W3;
+
+export :sumo wrestler: = F3;
+
+export :fowl cadet: = F3 fsW3;
+
+export :horse general: = fF bW fW3;
+export :ox general: = :horse general:;
+export :wind general: = :horse general:;
+export :river general: = :horse general:;
+
+export :fire general: = fF vW3;
+
+export :water general: = fF3 vW;
+export :mountain general: = :water general:;
+
+export :buddhist devil: = fF3 bsW;
+
+export :nature spirit: = fF bW sW3;
+
+export :sword general: = bW fW3 fF3;
+
+export :fowl officer: = F3 fsW2;
+
+export :beast officer: = F3 sW2 fW3;
+
+export :heavenly tetrarch: = W4 F4;
+
+export :chicken general: = bF fW4;
+export :pup general: = :chicken general:;
+
+export :pig general: = bW2 fF4;
+
+export :mountain stag: = fF3 fW sW2 bW4;
+
+export :leopard king: = W5 F5;
+
+export :turtle dove: = fF5 bsW;
+
+export :crossbow soldier: = fF3 bW sW3 fW5;
+
+export :cannon soldier: = fF5 bW sW3 fW7;
+
+###############################################################################
+# SLIDERS
+###############################################################################
+
+export :incense chariot: = fR;
+export :ox chariot: = :incense chariot:;
+export :fierce tiger: = :incense chariot:;
+
+export :reverse chariot: = vR;
+
+export :side dragon: = fsR;
+
+export :mountain witch: = B bR;
+
+export :white foal: = vR fB;
+export :mocking bird: = :white foal:;
+export :multi general: = :white foal:;
+
+export :flying chariot: = R;
+export :soldier: = :flying chariot:;
+export :running chariot: = :flying chariot:;
+export :square mover: = :flying chariot:;
+export :gliding swallow: = :flying chariot:;
+
+export :free serpent: = vR bB;
+export :coiled dragon: = :free serpent:;
+export :whale: = :free serpent:;
+
+export :angle mover: = B;
+
+export :free wolf: = fB fsR;
+export :running leopard: = :free wolf:;
+
+export :wizard stork: = fB sbR;
+
+export :flying ox: = B vR;
+export :free bear: = :flying ox:;
+export :free leopard: = :flying ox:;
+export :great whale: = :flying ox:;
+
+export :cavalier: = R fB;
+export :strong chariot: = :cavalier:;
+
+export :free dragon: = B bsR;
+export :free tiger: = :free dragon:;
+
+export :free king: = Q;
+export :free stag: = :free king:;
+export :strong eagle: = :free king:;
+
+###############################################################################
+# MIXED SLIDERS
+###############################################################################
+
+export :left howling dog: = bW fR;
+export :right howling dog: = :left howling dog:;
+
+export :vertical horse: = fF bW fR;
+
+export :spear soldier: = W fR;
+
+export :vertical pup: = bF bW fR;
+
+export :raiding hawk: = fF sW fR;
+
+export :right iron chariot: = rW bB <fl>B;
+
+export :left iron chariot: = lW bB <fr>B;
+
+export :vertical leopard: = W fF fR;
+
+export :right dog: = bW fR <bl>B;
+
+export :left dog: = bW fR <br>B;
+
+export :rams head soldier: = bW fB;
+export :flying swallow: = :rams head soldier:;
+
+export :wood chariot: = <fl><br>F vR;
+
+export :tile chariot: = <fr><bl>F vR;
+
+export :running boar: = W vR;
+export :running pup: = :running boar:;
+export :running serpent: = :running boar:;
+export :earth chariot: = :running boar:;
+export :vertical mover: = :running boar:;
+
+export :fierce ox: = vW fB;
+
+export :side wolf: = <fl><br>F sR;
+
+export :side ox: = <fr><bl>F sR;
+
+export :side mover: = W sR;
+export :swallows wings: = :side mover:;
+
+export :side monkey: = bW fF sR;
+
+export :divine sparrow: = W <fr>F b<fl>B;
+
+export :plodding ox: = F vR;
+
+export :side flyer: = F sR;
+
+export :flying stag: = K vR;
+export :copper elephant: = :flying stag:;
+
+export :vermillion sparrow: = K <fl><br>B;
+
+export :turtle snake: = K <fr><bl>B;
+
+export :side boar: = K sR;
+
+export :left chariot: = lW fR <fr><bl>B;
+
+export :right chariot: = rW fR <fl><br>B;
+
+export :great tiger: = W bsR;
+
+export :right tiger: = F lQ;
+
+export :left tiger: = F rQ;
+
+export :great bear: = W fQ;
+
+export :running rabbit: = bK fQ;
+
+export :left army: = K lQ;
+
+export :right army: = K rQ;
+
+export :divine turtle: = K b<fr>B;
+
+export :running wolf: = fW fB sR;
+
+export :flying hawk: = B fW;
+
+export :cannon chariot: = W fB vR;
+
+export :dragon king: = R F;
+
+export :dragon horse: = W B;
+
+export :free boar: = bW fsR fB;
+
+export :wind dragon: = <bl>F f<br>B sR;
+
+export :cloud dragon: = B fsW bR;
+
+export :rain dragon: = fK bsR bB;
+
+export :fire ox: = vQ sW;
+export :fierce wind: = :fire ox:;
+
+export :huai river: = W sQ;
+
+export :vertical tiger: = fR bW2;
+
+export :wind snapping turtle: = fF2 vR;
+
+export :running tile: = vR sW2;
+export :running tiger: = :running tile:;
+export :running bear: = :running tile:;
+
+export :gold stag: = fB bF2;
+
+export :silver rabbit: = fF2 bB;
+
+export :walking heron: = sW2 fF2 vR;
+
+export :reed bird: = sW2 bF2 vR;
+
+export :right dragon: = rW2 lQ;
+
+export :left dragon: = lW2 rQ;
+
+export :blue dragon: = sW2 vR <fr>B;
+
+export :white tiger: = vW2 sR <fl>B;
+
+export :divine tiger: = bW2 fsR <fl>B;
+
+export :divine dragon: = lW2 vrR <fr>B;
+
+export :running stag: = bW2 sR fB;
+
+export :rear standard: = F2 R;
+
+export :ceramic dove: = W2 B;
+export :elephant king: = :ceramic dove:;
+
+export :horseman: = sW2 vR fB;
+export :great foal: = :horseman:;
+
+export :woodland demon: = sW2 bF2 vR fB;
+export :free chicken: = :woodland demon:;
+export :free dog: = :woodland demon:;
+
+export :running ox: = bW2 fsR fB;
+
+export :chariot soldier: = sW2 vQ;
+
+export :fire demon: = vW2 sQ;
+export :water ox: = :fire demon:;
+
+export :strong bear: = bW2 fsQ;
+
+export :wind horse: = fF bW2 fR;
+
+export :vertical bear: = bW sW2 fR;
+export :vertical soldier: = :vertical bear:;
+
+export :tiger soldier: = bW fW2 fB;
+
+export :earth dragon: = fF bW fW2 bB;
+
+export :silver chariot: = bF fF2 vR;
+
+export :stone chariot: = fF sW2 vR;
+
+export :side soldier: = bW fW2 sR;
+
+export :gold chariot: = F sW2 vR;
+
+export :boar soldier: = bW sW2 fQ;
+export :leopard soldier: = :boar soldier:;
+export :bear soldier: = :boar soldier:;
+
+export :free pup: = bF sW2 fB vR;
+export :free ox: = :free pup:;
+export :free horse: = :free pup:;
+export :free pig: = :free pup:;
+
+export :little standard: = R fF2 bF;
+
+export :copper chariot: = fF3 vR;
+
+export :forest demon: = fsW3 fB bR;
+
+export :great dragon: = B vW3;
+
+export :center standard: = F3 R;
+export :front standard: = :center standard:;
+
+export :great dove: = W3 B;
+
+export :great standard: = R bF3 fB;
+
+export :vertical wolf: = sW bW3 fR;
+
+export :side serpent: = bW fW3 sR;
+
+export :cloud eagle: = sW fF3 vR;
+
+export :goose wing: = F sW3 vR;
+
+export :horse soldier: = bW sW3 fQ;
+export :ox soldier: = :horse soldier:;
+
+export :spear general: = bW2 sW3 fR;
+
+export :cannon general: = bW2 sW3 fQ;
+
+export :beast bird: = :cannon general: bB;
+export :fowl: = :beast bird:;
+
+export :great leopard: = bW sW2 fF3 fR;
+
+export :longbow soldier: = bW sW2 fF5 fR;
+
+export :thunder runner: = bsW4 fQ;
+
+export :fire dragon: = R bF2 fF4;
+
+export :water dragon: = R fF2 bF4;
+
+export :longbow general: = fB vR sW5;
+
+export :stone peng: = B sW5;
+
+export :mount tai: = B fsW5;
+
+export :free demon: = vW5 sQ;
+export :free fire: = :free demon:;
+
+export :free dream eater: = sW5 vQ;
+
+export :running dragon: = bW5 fsQ;
+
+export :great shark: = R bF2 fF5;
+
+export :crossbow general: = :spear general: fF5;
+
+export :playful parrot: = bF2 sW5 fF3 vR;
+
+###############################################################################
+# LEAPERS, JUMPERS, & SPECIAL
+###############################################################################
+
+# On `j` in this section.
+#
+# Sekai no Shogi (Umebayashi, 1997) marks several pieces with glyphs
+# that en.wikipedia renders as leaps to a fixed square. The primary
+# source does not support that reading.
+#
+# Sourced. Rule 4 (p. 235) gives a possible explanation to the hatched arrow:
+# while the original text gives none and the meaning is unclear, it is said
+# that arrows with three strokes are 思われる ("thought") to allow
+# crossing up to three PIECES and then ranging. The count is of pieces,
+# not squares. Applies to: king of teachings, free bird, gold bird,
+# great elephant, ancient dragon.
+#
+# Sourced. Four pieces carry a circle superimposed on a ranging arrow
+# and are detailed in prose as 駒を飛び越えて走りが出来る ("can jump
+# over piece(s) and range"): heavenly tetrarch king (all eight
+# directions), great hawk (forward only), rain demon and great eagle
+# (forward diagonals). One circle, one hurdle.
+#
+# Inferred. The treacherous fox draws TWO circles on its arrows and
+# the mountain crane a numeral 3, both using the same superimposition
+# but without any attached prose. We read the marker count as the hurdle
+# allowance, by analogy with rule 4's compression of strokes. This is
+# our inference, not Umebayashi's; ja.wikipedia instead concluded
+# these two pieces have no special jumping power. Supporting: the
+# fox's circles sit at distances 1 and 2, so the leap reading would
+# make one of them a plain step, and en.wikipedia silently shifts
+# them to 2 and 3 to compensate. Also, fox (2 hurdles, 6 directions)
+# promoting to crane (3 hurdles, 8 directions) is a monotone upgrade,
+# as opposed to the leap reading which has the piece change mechanism
+# on promotion.
+#
+# Pieces with a plain × or 3× glyph ARE genuine leaps per the p. 210
+# legend and are left as leapers: great master, lion dog, the
+# turtles, phoenix/kirin masters, flying cat, cassia horse, flying
+# dragon, phoenix, kirin, running horse, mountain hawk, great stag,
+# the mountain eagles, horned hawk, flying eagle, roaring dog, great
+# dream-eater, heavenly horse, center master, peng master, vice
+# general.
+#
+# Note that en.wikipedia's own footnote [k] quotes rule 4 and renders
+# 駒 as "pieces [squares]" — the bracketed interpretation is editorial,
+# where the Japanese is unambiguous.
+
+export :treacherous fox: =
+        B vR  # slider
+# Reading A (en.wikipedia): leap to distance 2 or 3, then slide.
+#         (AG - [B])    # leap and slide (diagonal)
+#         v(DH - [R]);  # leap and slide (orthogonal)
+# Reading B (inferred from Sekai no Shogi glyph conventions): cross
+# up to 2 hurdles at any distance, then continue ranging.
+        v((jyQ-[jy2]) - Q);
+# Reading B chosen — consistent with rule 4's piece-counting, with
+# the four circle-on-arrow pieces, and with the promotion
+# to mountain crane (3 hurdles, 8 dirs).
+
+export :cassia horse: = <ff>N;
+
+export :flying dragon: = A;
+
+export :kirin: = F vW sD;
+
+export :phoenix: = W A;
+
+export :flying cat: = bK fsH fG;
+
+export :running horse: = bW bA fQ;
+
+export :mountain hawk: = fD R fB bF2;
+
+export :little turtle: = vD vQ sW2;
+
+export :great stag: = fA R bF2;
+
+export :left mountain eagle: = lA R flB <br>F2;
+
+export :right mountain eagle: = rA R frB <bl>F2;
+
+export :kirin master: = vH vQ sW3;
+export :great turtle: = :kirin master:;
+
+export :phoenix master: = vQ fG sW3;
+
+export :great master: = fG fH bF5 sW5 fQ bR;
+
+export :horned hawk: = Q fD;
+
+export :flying eagle: = Q fA;
+
+export :roaring dog: = fG H R fB bF3;
+
+export :lion dog: = Q H G;
+
+export :great dream eater: = Q sH;
+
+export :heavenly horse: = <ff><bb>N fR;
+
+export :spirit turtle: = Q H;
+
+export :treasure turtle: = Q D;
+
+export :wooden dove: = W2 B (G-[F2]);
+
+export :center master: = sW3 bF3 vD fA vR fB;
+
+export :peng master: = sW5 bF5 fG vR fB;
+
+export :free eagle: =
+        Q                       # slider
+        (D A H G f:4,4: - [Q])  # leap and slide
+        (cmK - bK)              # igui + jitto
+        (cmK-[cm3] - [Q])         # sweep capture
+        f(cmF-[cm4] - [Q]);       # sweep capture (forward diagonal)
+
+export :free bird: =
+        R fB bF3           # slider
+        f((jyB-[jy3]) - B);  # slide and jump
+
+export :great hawk: = Q f(jyR - R);
+
+export :king of teachings: = Q ((jyQ-[jy3]) - Q);
+
+export :mountain crane: = Q ((jyQ-[jy3]) - Q);
+
+export :great eagle: = Q f(jyB - B);
+
+export :great elephant: =
+        fF3 R bB
+        ((jyR-[jy3]) - R)
+        b((jyB-[jy3]) - B);
+
+export :gold bird: = sW3 bF3 vR fB f((jyB-[jy3]) - B);
+
+export :ancient dragon: =
+        B vR
+        v((jyR-[jy3]) - R);
+
+export :rain demon: =
+        fW3 sW2 bF2 bR fB
+        f(jyB - B);
+
+export :flying general: = cymW-[cym0];
+
+export :angle general: = cymF-[cym0];
+
+export :great general: = cymK-[cym0];
+
+export :fierce dragon: = :angle general: W2;
+
+export :flying crocodile: = :flying general: bF2 fF3;
+
+export :vice general: = :angle general: D;
+
+export :hook mover: = R - [sR];
+
+export :tengu: = B - [sB];
+
+export :capricorn: = :tengu: W;
+
+export :peacock: = f:tengu: bF2;
+
+export :heavenly tetrarch king: = Q (jyQ - Q);
+
+export :lion: = D A N (cmK - [aK]);
+
+export :furious fiend: = :lion: W3 F3;
+
+export :buddhist spirit: = :lion: Q;
+
+export :lion hawk: = :lion: B;
